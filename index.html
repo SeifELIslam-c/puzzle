@@ -52,15 +52,24 @@
         <input type="text" id="answer" placeholder="Your answer here">
         <button onclick="checkAnswer()">Submit</button>
         <p class="message" id="message">
-            I love you, Aida, ho dok men el nas kol khayertek nti a Habibati khatrakech farida men naw3ek fi kolech walleh, rabi ykemelelna inchallah belkhir we yedjma3na ta7t sa9f wa7ed wfel djena inchallah n7aabekkk ❤️
+            نحبك ا عيدوشتي والله هاكي عرفتي وش هي اكثر حاجة تعجبني فيك بعد جمالك و شطارتك و كل شيء فيك ا حبيبتي مليح و الحمدلله ربي رزقني بيك كأني حاس روحي ترزقت بملاك او حور عين ماشاء الله متممة فكلش ري يزوجنا ان شاء الله و يرزقني بيك تحت سقف واحد و يرزقنا الجنة مع بعض ان شاء الله ❤️
         </p>
     </div>
 
     <script>
         function checkAnswer() {
-            const answer = document.getElementById("answer").value.trim();
+            const answer = document.getElementById("answer").value.trim().toLowerCase();
             const message = document.getElementById("message");
-            if (answer === "الساعة الرملية") {
+
+            // Check for correct answers
+            if (answer === "ساعة الرملية" || answer === "الساعة الرملية") {
+                message.innerHTML = "I love you, Aida ❤️";
+                message.style.display = "block";
+            } else if (answer === "جمالي") {
+                message.innerHTML = "أنتِ القمر الوحيد الذي أملك ا حياتي والله";
+                message.style.display = "block";
+            } else if (answer === "طيابي") {
+                message.innerHTML = "علفكرة اكي حتطيبيلي طووول و الصراحى كل مرة تطيبيلي فيها تعجبني كثر من لي فاتت بالتلاث نوكلك يديك اصبري برك";
                 message.style.display = "block";
             } else {
                 alert("Oops! Try again.");
