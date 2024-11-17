@@ -24,6 +24,7 @@
             color: #e63946;
             font-size: 24px;
             margin-top: 20px;
+            white-space: pre-wrap; /* Allows multi-line text */
         }
         input {
             font-size: 18px;
@@ -46,18 +47,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>A Little Puzzle for You, Aida</h1>
-        <p>Solve this equation: <strong>12 + 8 = ?</strong></p>
-        <input type="number" id="answer" placeholder="Your answer here">
+        <h1>A Little Puzzle for You, Aida ❤️</h1>
+        <p>Solve this equation to unlock the message:</p>
+        <p><strong>\(\ln x + \frac{e^x}{5}\)</strong></p>
+        <p>What is the derivative of the above expression?</p>
+        <input type="text" id="answer" placeholder="Your answer here">
         <button onclick="checkAnswer()">Submit</button>
-        <p class="message" id="message">I love you, Aida, ho dok men bin el nas kol khayertek nti a Habibati khatrakech farida men naw3ek fi kolech walleh, rabi ykemelelna inchallah belkhir we yedjma3na ta7t sa9f wa7ed wfel djena inchallah n7aabekkk ❤️</p>
+        <p class="message" id="message">
+            I love you, Aida, ho dok men el nas kol khayertek nti a Habibati khatrakech farida men naw3ek fi kolech walleh, rabi ykemelelna inchallah belkhir we yedjma3na ta7t sa9f wa7ed wfel djena inchallah n7aabekkk ❤️
+        </p>
     </div>
 
     <script>
         function checkAnswer() {
-            const answer = document.getElementById("answer").value;
+            const answer = document.getElementById("answer").value.trim();
             const message = document.getElementById("message");
-            if (answer == "20") {
+            if (answer === "1/x + e^x/5") {
                 message.style.display = "block";
             } else {
                 alert("Oops! Try again.");
