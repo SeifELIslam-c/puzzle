@@ -47,10 +47,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>A Little Puzzle for You, Aida ❤️</h1>
-        <p>Solve this equation to unlock the message:</p>
-        <p><strong>\(\ln x + \frac{e^x}{5}\)</strong></p>
-        <p>What is the derivative of the above expression?</p>
+        <h1>A Little Puzzle for You</h1>
+        <p>وش هي اكثر حاجة نشتيها فيك ا عايدة</p>
         <input type="text" id="answer" placeholder="Your answer here">
         <button onclick="checkAnswer()">Submit</button>
         <p class="message" id="message">
@@ -62,7 +60,7 @@
         function checkAnswer() {
             const answer = document.getElementById("answer").value.trim();
             const message = document.getElementById("message");
-            if (answer === "1/x + e^x/5") {
+            if (answer === "الساعة الرملية") {
                 message.style.display = "block";
             } else {
                 alert("Oops! Try again.");
