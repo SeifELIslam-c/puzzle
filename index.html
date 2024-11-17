@@ -24,6 +24,7 @@
             color: #e63946;
             font-size: 24px;
             margin-top: 20px;
+            white-space: pre-wrap; /* Allows multi-line text */
         }
         input {
             font-size: 18px;
@@ -46,18 +47,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>A Little Puzzle for You, Aida</h1>
-        <p>Solve this equation: <strong>12 + 8 = ?</strong></p>
-        <input type="number" id="answer" placeholder="Your answer here">
+        <h1>A Little Puzzle for You</h1>
+        <p>وش هي اكثر حاجة نشتيها فيك ا عايدة</p>
+        <input type="text" id="answer" placeholder="Your answer here">
         <button onclick="checkAnswer()">Submit</button>
-        <p class="message" id="message">I love you, Aida, ho dok men bin el nas kol khayertek nti a Habibati khatrakech farida men naw3ek fi kolech walleh, rabi ykemelelna inchallah belkhir we yedjma3na ta7t sa9f wa7ed wfel djena inchallah n7aabekkk ❤️</p>
+        <p class="message" id="message">
+            نحبك ا عيدوشتي والله هاكي عرفتي وش هي اكثر حاجة تعجبني فيك بعد جمالك و شطارتك و كل شيء فيك ا حبيبتي مليح و الحمدلله ربي رزقني بيك كأني حاس روحي ترزقت بملاك او حور عين ماشاء الله متممة فكلش ربي يزوجنا ان شاء الله و يرزقني بيك تحت سقف واحد و يرزقنا الجنة مع بعض ان شاء الله ❤️
+        </p>
     </div>
 
     <script>
         function checkAnswer() {
-            const answer = document.getElementById("answer").value;
+            const answer = document.getElementById("answer").value.trim().toLowerCase();
             const message = document.getElementById("message");
-            if (answer == "20") {
+
+            // Check for correct answers
+            if (answer === "ساعة الرملية" || answer === "الساعة الرملية") {
+                message.style.display = "block";
+            } else if (answer === "جمالي") {
+                message.innerHTML = "أنتِ القمر الوحيد الذي أملك ا حياتي والله";
+                message.style.display = "block";
+            } else if (answer === "طيابي") {
+                message.innerHTML = "علفكرة اكي حتطيبيلي طووول و الصراحة كل مرة تطيبيلي فيها تعجبني كثر من لي فاتت بالتلاث نوكلك يديك اصبري برك";
                 message.style.display = "block";
             } else {
                 alert("Oops! Try again.");
